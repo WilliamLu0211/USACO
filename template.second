@@ -1,22 +1,18 @@
-#define STR_SIZE 256
-#define FILE_SIZE 999999
+
+#define STR_SIZE 64
 
 int main() {
 
   char fileIn[STR_SIZE] = PROMPT;
   strcat(fileIn, ".in");
-  int in = open(fileIn, O_RDONLY);
-  char input[FILE_SIZE];
-  read(in, input, FILE_SIZE);
-  close(in);
-
-  char output[FILE_SIZE];
-
   char fileOut[STR_SIZE] = PROMPT;
   strcat(fileOut, ".out");
-  int out = open(fileOut, O_CREAT | O_WRONLY, 0644);
-  write(out, output, strlen(output));
-  close(out);
+
+  ifstream fin(fileIn);
+  ofstream fout(fileOut);
+
+  int n;
+  fin >> n;
 
   return 0;
 }

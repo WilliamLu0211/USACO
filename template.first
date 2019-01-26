@@ -1,8 +1,7 @@
 #include <iostream>
+#include <fstream>
 #include <cstring>
-#include <unistd.h>
-#include <fcntl.h>
 
 using namespace std;
 
-#define PROMPT 
+#define PROMPT
